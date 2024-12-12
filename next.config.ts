@@ -14,10 +14,6 @@ const nextConfig: NextConfig = {
         ...config.resolve?.fallback,
         fs: false,
       },
-      alias: {
-        ...config.resolve?.alias,
-        '@': '.',
-      },
     };
     return config;
   },

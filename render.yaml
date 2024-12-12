@@ -2,7 +2,7 @@ services:
   - type: web
     name: workout-tracker
     env: node
-    buildCommand: npm cache clean --force && npm install && npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
