@@ -22,19 +22,19 @@
     "react-dom": "^18.2.0",
     "recharts": "^2.14.1",
     "sonner": "^1.7.1",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.4.16",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49"
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
     "cli": "^1.0.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.4",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
     "typescript": "^5"
   }
 }
