@@ -7,20 +7,24 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '2mb'
     },
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve = {
       ...config.resolve,
       fallback: {
         ...config.resolve?.fallback,
         fs: false,
-      },
-      alias: {
-        ...config.resolve?.alias,
-        '@': '.'
       }
     };
+    
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': '.'
+      };
+    }
+    
     return config;
-  },
+  }
 };
 
 export default nextConfig;
