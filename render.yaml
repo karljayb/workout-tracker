@@ -3,8 +3,8 @@ services:
     name: workout-tracker
     env: node
     buildCommand: |
-      npm install --save-dev typescript @types/react @types/node
       npm install
+      npm install --save-dev typescript @types/react @types/node @types/react-dom
       npm run build
     startCommand: npm start
     envVars:
@@ -13,9 +13,8 @@ services:
       - key: NEXTAUTH_URL
         value: ${NEXTAUTH_URL}
       - key: NEXTAUTH_SECRET
-        value: ${NEXTAUTH_SECRET}  
+        value: ${NEXTAUTH_SECRET}
       - key: GITHUB_ID
-        value: ${GITHUB_ID}  
+        value: ${GITHUB_ID}
       - key: GITHUB_SECRET
-        value: ${GITHUB_SECRET} 
-    autoDeploy: true
+        value: ${GITHUB_SECRET}
