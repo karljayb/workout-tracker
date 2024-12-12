@@ -10,8 +10,12 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: NEXT_PUBLIC_BASE_URL
-        value: https://your-app-name.onrender.com
-      - key: NEXT_PUBLIC_API_URL
-        value: https://your-app-name.onrender.com/api
+      - key: NEXTAUTH_URL
+        value: ${NEXTAUTH_URL}
+      - key: NEXTAUTH_SECRET
+        value: ${NEXTAUTH_SECRET}  
+      - key: GITHUB_ID
+        value: ${GITHUB_ID}  
+      - key: GITHUB_SECRET
+        value: ${GITHUB_SECRET} 
     autoDeploy: true

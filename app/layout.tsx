@@ -2,8 +2,11 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import { WorkoutProvider } from '@/contexts/WorkoutContext'
+import { AuthProvider } from '@/contexts/AuthContext'
+import { AuthGuard } from '@/components/AuthGuard'
 import { Toaster } from "@/components/ui/toast"
 import { ThemeProvider } from "@/components/theme-provider"
+import AuthSessionProvider from "@/components/providers/AuthSessionProvider"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,10 +39,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <WorkoutProvider>
-            {children}
-            <Toaster />
-          </WorkoutProvider>
+          <AuthSessionProvider>
+            <AuthProvider>
+              <AuthGuard>
+                <WorkoutProvider>
+                  {children}
+                  <Toaster />
+                </WorkoutProvider>
+              </AuthGuard>
+            </AuthProvider>
+          </AuthSessionProvider>
         </ThemeProvider>
       </body>
     </html>
