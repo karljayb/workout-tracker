@@ -88,7 +88,7 @@ const WorkoutTracker: React.FC = () => {
         });
         setNewRunning({ date: '', distance: '', time: '', notes: '' });
         success('Running workout added successfully');
-      } catch (err) {
+      } catch {
         showError('Failed to add running workout');
       } finally {
         setIsSubmitting(false);
@@ -140,7 +140,7 @@ const WorkoutTracker: React.FC = () => {
         setNewStrengthWorkout({ date: '', duration: '' });
         setTempExercises([]);
         success('Strength workout saved successfully');
-      } catch (err) {
+      } catch {
         showError('Failed to save strength workout');
       } finally {
         setIsSubmitting(false);
@@ -172,12 +172,12 @@ const WorkoutTracker: React.FC = () => {
           try {
             importData(e.target?.result as string);
             success('Data imported successfully');
-          } catch (error) {
+          } catch {
             showError('Error importing data. Please check the file format.');
           }
         };
         reader.readAsText(file);
-      } catch (err) {
+      } catch {
         showError('Failed to read file');
       }
     }

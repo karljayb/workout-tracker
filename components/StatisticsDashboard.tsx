@@ -67,7 +67,6 @@ const StatisticsDashboard = () => {
 
   // Calculate weekly stats
   const weeklyStats = useMemo(() => {
-    const now = new Date();
     const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
 
