@@ -1,4 +1,3 @@
-// app/page.tsx
 import WorkoutTracker from '@/components/WorkoutTracker'
 import StatisticsDashboard from '@/components/StatisticsDashboard'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -7,26 +6,31 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Home() {
   return (
-    <main className="container mx-auto p-4">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">My Workout Tracker</h1>
-        <div className="flex items-center gap-4">
-          <UserMenu />
-          <ThemeToggle />
+    <main className="min-h-screen bg-background">
+      <div className="container mx-auto py-6 px-4 space-y-8">
+        {/* Enhanced Header */}
+        <div className="flex justify-between items-center">
+          <h1 className="text-4xl font-bold tracking-tight">My Workout Tracker</h1>
+          <div className="flex items-center gap-4">
+            <UserMenu />
+            <ThemeToggle />
+          </div>
         </div>
+        
+        {/* Enhanced Tabs */}
+        <Tabs defaultValue="tracker" className="space-y-6">
+          <TabsList className="w-full grid grid-cols-2">
+            <TabsTrigger value="tracker">Tracker</TabsTrigger>
+            <TabsTrigger value="stats">Statistics</TabsTrigger>
+          </TabsList>
+          <TabsContent value="tracker" className="space-y-6">
+            <WorkoutTracker />
+          </TabsContent>
+          <TabsContent value="stats" className="space-y-6">
+            <StatisticsDashboard />
+          </TabsContent>
+        </Tabs>
       </div>
-      <Tabs defaultValue="tracker" className="w-full">
-        <TabsList className="mb-4">
-          <TabsTrigger value="tracker">Tracker</TabsTrigger>
-          <TabsTrigger value="stats">Statistics</TabsTrigger>
-        </TabsList>
-        <TabsContent value="tracker">
-          <WorkoutTracker />
-        </TabsContent>
-        <TabsContent value="stats">
-          <StatisticsDashboard />
-        </TabsContent>
-      </Tabs>
     </main>
   )
 }

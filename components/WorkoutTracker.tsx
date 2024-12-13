@@ -186,25 +186,46 @@ const WorkoutTracker: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Action Buttons */}
-      <div className="flex justify-end gap-2 mb-4">
-        <Button onClick={exportData} className="flex items-center">
-          <Download className="w-4 h-4 mr-2" /> Export
-        </Button>
-        <label className="flex">
-          <input
-            type="file"
-            accept=".json"
-            onChange={handleFileImport}
-            className="hidden"
-          />
-          <Button asChild className="flex items-center">
-            <span><Upload className="w-4 h-4 mr-2" /> Import</span>
-          </Button>
-        </label>
-        <Button variant="destructive" onClick={resetData} className="flex items-center">
-          <RefreshCw className="w-4 h-4 mr-2" /> Reset
-        </Button>
-      </div>
+      <Card className="mb-6">
+        <CardContent className="p-4">
+          <div className="flex justify-end gap-2">
+            <Button 
+              variant="outline" 
+              onClick={exportData} 
+              className="gap-2 hover:bg-secondary"
+            >
+              <Download className="h-4 w-4" />
+              Export
+            </Button>
+            <label className="flex">
+              <input
+                type="file"
+                accept=".json"
+                onChange={handleFileImport}
+                className="hidden"
+              />
+              <Button 
+                variant="outline" 
+                asChild 
+                className="gap-2 hover:bg-secondary"
+              >
+                <span>
+                  <Upload className="h-4 w-4" />
+                  Import
+                </span>
+              </Button>
+            </label>
+            <Button 
+              variant="outline" 
+              onClick={resetData} 
+              className="gap-2 hover:bg-destructive/90 hover:text-destructive-foreground"
+            >
+              <RefreshCw className="h-4 w-4" />
+              Reset
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Running Section */}
       <Card>
