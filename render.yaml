@@ -3,8 +3,7 @@ services:
     name: workout-tracker
     env: node
     buildCommand: |
-      npm install
-      npm install --save-dev typescript @types/react @types/node @types/react-dom
+      npm install --legacy-peer-deps
       npm run build
     startCommand: npm start
     envVars:
@@ -18,3 +17,4 @@ services:
         value: ${GITHUB_ID}
       - key: GITHUB_SECRET
         value: ${GITHUB_SECRET}
+    nodeVersion: 18.17.0
