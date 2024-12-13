@@ -3,7 +3,8 @@ services:
     name: workout-tracker
     env: node
     buildCommand: |
-      npm install --legacy-peer-deps
+      npm install
+      npm install --save-dev typescript @types/react @types/node
       npm run build
     startCommand: npm start
     envVars:
