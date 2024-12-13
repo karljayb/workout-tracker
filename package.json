@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node .next/standalone/server.js",
+    "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next node_modules package-lock.json",
-    "prepare": "npm install autoprefixer postcss tailwindcss tailwindcss-animate --save"
+    "clean": "rm -rf .next node_modules package-lock.json"
   },
   "dependencies": {
     "@auth/core": "^0.18.0",
