@@ -1,8 +1,11 @@
-import WorkoutTracker from '@/components/WorkoutTracker'
-import StatisticsDashboard from '@/components/StatisticsDashboard'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { UserMenu } from '@/components/UserMenu'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+// app/page.tsx
+'use client';
+
+import WorkoutTracker from '@/components/WorkoutTracker';
+import StatisticsDashboard from '@/components/StatisticsDashboard';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { UserMenu } from '@/components/UserMenu';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
@@ -32,5 +35,5 @@ export default function Home() {
         </Tabs>
       </div>
     </main>
-  )
+  );
 }
