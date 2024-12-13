@@ -3,7 +3,7 @@ services:
     name: workout-tracker
     env: node
     buildCommand: npm install && npm run build
-    startCommand: npm run start
+    startCommand: node .next/standalone/server.js
     envVars:
       - key: NODE_ENV
         value: production
