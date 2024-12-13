@@ -1,5 +1,7 @@
-import NextAuth from "next-auth"
-import GithubProvider from "next-auth/providers/github"
+import NextAuth from "next-auth";
+import GithubProvider from "next-auth/providers/github";
+
+export const runtime = "edge"; // Add this for better performance
 
 const handler = NextAuth({
   providers: [
@@ -19,6 +21,8 @@ const handler = NextAuth({
   pages: {
     signIn: '/login',
   },
-})
+});
 
-export { handler as GET, handler as POST }
+// Export in the new Next.js route handler format
+export const GET = handler;
+export const POST = handler;
