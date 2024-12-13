@@ -30,7 +30,8 @@
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
-    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.10.3",
@@ -42,7 +43,6 @@
     "webpack": "^5.89.0"
   },
   "devDependencies": {
-    "@shadcn/ui": "^0.0.4",
-    "autoprefixer": "^10.4.20"
+    "@shadcn/ui": "^0.0.4"
   }
 }
